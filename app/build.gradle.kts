@@ -42,6 +42,7 @@ android {
 dependencies {
 
     implementation(libs.androidx.navigation)
+    implementation ("androidx.compose.runtime:runtime-livedata:1.6.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
