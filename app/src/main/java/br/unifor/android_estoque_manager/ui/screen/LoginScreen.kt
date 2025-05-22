@@ -15,12 +15,16 @@ import androidx.compose.ui.unit.dp
 fun LoginScreen(
     onLoginSuccess: () -> Unit,
     modifier: Modifier = Modifier,
-    innerPadding: PaddingValues = PaddingValues(0.dp)
+    innerPadding: PaddingValues = PaddingValues(10.dp)
 ) {
     // Função Remember
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
     Column(
         modifier = Modifier
             .padding(innerPadding)
@@ -31,7 +35,9 @@ fun LoginScreen(
         Text(
             text = "EstoqueManager - Login",
             style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(bottom = 24.dp)
+            modifier = Modifier.padding(
+                bottom = 24.dp
+            )
         )
 
         // Campo de E-mail
@@ -69,6 +75,7 @@ fun LoginScreen(
             Text("Entrar")
         }
     }
+}
 }
 
 

@@ -14,11 +14,13 @@ class EstoqueViewModel : ViewModel() {
     }
 
     private fun loadSampleItems() {
+        // Receber informaçõs do banco
         _items.value = listOf(
-            itemModel(1, "Processador Intel i7", 15, "10ª geração"),
-            itemModel(2, "Memória RAM 16GB", 23, "DDR4 3200MHz")
+            itemModel(1, "Barra Olímpica", 3, "20kg"),
+            itemModel(2, "Anilha 25kg", 5, "Apenas com autorização")
         )
     }
+
 
     fun updateQuantity(itemId: Int, newQuantity: Int) {
         _items.value = _items.value?.map { item ->
@@ -29,4 +31,18 @@ class EstoqueViewModel : ViewModel() {
     fun removeItem(itemId: Int) {
         _items.value = _items.value?.filter { it.id != itemId }
     }
+
+    fun addItem(item: itemModel) {
+        val currentList = _items.value.orEmpty()
+        val updatedList = currentList + item
+        _items.value = updatedList
+        //updateDB()
+    }
+
+    fun updtadeBD(){
+        //implementar
+        // this.items -> BD
+        print("updateBD")
+    }
 }
+

@@ -18,6 +18,7 @@ import br.unifor.android_estoque_manager.ui.screen.ManagerScreen
 import br.unifor.android_estoque_manager.ui.theme.AndroidEstoqueManagerTheme
 import br.unifor.android_estoque_manager.viewmodel.EstoqueViewModel
 
+
 const val LOGIN = "login"
 const val MANAGER = "manager"
 
@@ -63,6 +64,9 @@ fun AppNavigation(viewModel: EstoqueViewModel) {
                 },
                 onItemRemove = { id ->
                     viewModel.removeItem(id)
+                },
+                onItemAdd = { newItem ->
+                    viewModel.addItem(newItem)
                 }
             )
         }
@@ -82,7 +86,8 @@ fun AppNavigationPreview() {
         ManagerScreen(
             items = mockItems,
             onItemQuantityChange = { _, _ -> },
-            onItemRemove = { _ -> }
+            onItemRemove = { _ -> },
+            onItemAdd = { newItem -> println("Novo item: $newItem") }
         )
     }
 }

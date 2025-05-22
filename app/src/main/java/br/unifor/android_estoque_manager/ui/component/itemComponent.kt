@@ -98,9 +98,9 @@ fun ItemComponent(
 fun ItemComponentPreview() {
     val sampleItem = itemModel(
         id = 1,
-        nome = "Processador Intel i7",
-        quantidade = 15,
-        descricao = "10ª geração, 8 núcleos"
+        nome = "Halter 20kg",
+        quantidade = 3,
+        descricao = "Guardado no armário"
     )
 
     ItemComponent(
